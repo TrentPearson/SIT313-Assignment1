@@ -10,18 +10,38 @@ namespace Assignment1
     [Activity(Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity
     {
-        public AnalogClock analogClock;
-        public TextView text;
+        public static TextView text;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
 
             base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.activity_main);
+
+
+            TextView clockTime = FindViewById<TextView>(Resource.Id.ClockTextView);
 
             TextView text = FindViewById<TextView>(Resource.Id.textview1);
-
-            // Set our view from the "main" layout resource
-            SetContentView(Resource.Layout.activity_main);
+            if(DataStore.Instance.currentLocation != null)
+            {
+                text.Text = DataStore.Instance.currentLocation;
+            }
+            if (DataStore.Instance.currentZoneTime != null)
+            {
+                string temp = "";
+                if(DataStore.Instance.currentZoneTime.Hour < 10)
+                {
+                    temp += '0';
+                }
+                temp += DataStore.Instance.currentZoneTime.Hour;
+                temp += ":";
+                if (DataStore.Instance.currentZoneTime.Minute < 10)
+                {
+                    temp += '0';
+                }
+                temp += DataStore.Instance.currentZoneTime.Minute;
+                clockTime.Text = temp;
+            }
 
             //Button sends user to the main activity of the application.
             ImageButton button1 = FindViewById<ImageButton>(Resource.Id.imgbutton1);
@@ -46,6 +66,10 @@ namespace Assignment1
                 var intent = new Intent(this, typeof(Add));
                 StartActivity(intent);
             };
+        }
+        public static void Changetext(string newText)
+        {
+            text.Text = newText;
         }
     }
 }
