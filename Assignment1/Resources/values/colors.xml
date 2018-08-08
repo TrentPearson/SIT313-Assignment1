@@ -3,4 +3,7 @@
     <color name="colorPrimary">#2c3e50</color>
     <color name="colorPrimaryDark">#1B3147</color>
     <color name="colorAccent">#3498db</color>
+  <color name="clockColour">#000000</color>
+  <color name="backgroundColour">#FFFFFF</color>
+  <color name="btnBackground">#33AAAAAA</color>
 </resources>

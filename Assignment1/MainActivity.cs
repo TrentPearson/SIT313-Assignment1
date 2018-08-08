@@ -18,14 +18,20 @@ namespace Assignment1
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
-
+            //Defining the location of the visual time.
             TextView clockTime = FindViewById<TextView>(Resource.Id.ClockTextView);
 
+
+            //Defining the location of the location name.
             TextView text = FindViewById<TextView>(Resource.Id.textview1);
+
+            //If "currentLocation" has a value, then give "currentLocation" a text value.
             if(DataStore.Instance.currentLocation != null)
             {
                 text.Text = DataStore.Instance.currentLocation;
             }
+
+            //If "currentZoneTime" has a value, then print that time stored in "DataStore".
             if (DataStore.Instance.currentZoneTime != null)
             {
                 string temp = "";
@@ -67,6 +73,8 @@ namespace Assignment1
                 StartActivity(intent);
             };
         }
+
+        //Changes the text value of the "TextView" with the value that is produce in "List" class.
         public static void Changetext(string newText)
         {
             text.Text = newText;

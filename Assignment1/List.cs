@@ -25,6 +25,7 @@ namespace Assignment1
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.list);
 
+            //Button sends user to the "MainActivity" activity of the application.
             ImageButton button1 = FindViewById<ImageButton>(Resource.Id.imgbutton1);
             button1.Click += (sender, e) =>
             {
@@ -32,6 +33,7 @@ namespace Assignment1
                 StartActivity(intent);
             };
 
+            //Button sends user to the "List" activity of the application.
             ImageButton button2 = FindViewById<ImageButton>(Resource.Id.imgbutton2);
             button2.Click += (sender, e) =>
             {
@@ -39,6 +41,7 @@ namespace Assignment1
                 StartActivity(intent);
             };
 
+            //Button sends user to the "Add" activity of the application.
             ImageButton button3 = FindViewById<ImageButton>(Resource.Id.imgbutton3);
             button3.Click += (sender, e) =>
             {
@@ -46,8 +49,10 @@ namespace Assignment1
                 StartActivity(intent);
             };
 
+            //Defines location of the listview in question.
             Mylistview = FindViewById<ListView>(Resource.Id.listView1);
 
+            //The bellow if statements state that, if the cooresponding namespace is selected in the "DataStore" class, then add that namespace to "myitems", whichis located in the "List" class.
             if(DataStore.Instance.Paris)
             {
                 myitems.Add("Paris");
@@ -77,6 +82,7 @@ namespace Assignment1
                 myitems.Add("New Zealand");
             }
 
+            //This statement states that if the length of characters within "myitems" are equal to 0, then the array adapter can allow the click event to occur.
             if (myitems.Count > 0)
             {
                 ArrayAdapter<string> adpter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleListItem1, myitems);
@@ -86,10 +92,13 @@ namespace Assignment1
             }
         }
 
+        //This function tells the program that when a particular listview section is engaged, then the cooresponding 'if' statement can occur 
         private void Mylistview_ItemClick(object sender, AdapterView.ItemClickEventArgs e)
         {
+            //Define the UTC time for the different time zones.
             var utcTime = DateTime.UtcNow;
             
+            //The following 'if' statements state that is they are selected, "currentLocation" values becomes that string value, along with setting the value of "currentTimeZone" to the cooresponding values, it then takes that user to the "MainActivity" class.
             if (myitems[e.Position] == "Melbourne")
             {
                 DataStore.Instance.currentLocation = "Melbourne";

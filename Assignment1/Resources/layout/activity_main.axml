@@ -2,11 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundColour"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/town2"
+        android:alpha="0.6"
+        android:layout_alignParentBottom="true" />
     <ImageButton
         android:src="@drawable/clock"
-        android:layout_width="135dp"
+        android:background="@color/btnBackground"
+        android:layout_width="137dp"
         android:layout_height="125dp"
         android:id="@+id/imgbutton1"
         android:layout_alignParentTop="false"
@@ -15,15 +24,17 @@
         android:foregroundGravity="left" />
     <ImageButton
         android:src="@drawable/list"
-        android:layout_width="135dp"
+        android:background="@color/btnBackground"
+        android:layout_width="137dp"
         android:layout_height="125dp"
         android:id="@+id/imgbutton2"
         android:layout_alignParentTop="false"
-        android:layout_marginLeft="138dp"
+        android:layout_marginLeft="137dp"
         android:foregroundGravity="top|center_vertical" />
     <ImageButton
         android:src="@drawable/add"
-        android:layout_width="135dp"
+        android:background="@color/btnBackground"
+        android:layout_width="137dp"
         android:layout_height="125dp"
         android:id="@+id/imgbutton3"
         android:layout_alignParentTop="false"
@@ -49,6 +60,7 @@
         android:gravity="center_vertical">
         <TextView
             android:id="@+id/ClockTextView"
+            android:textColor="@color/clockColour"
             android:layout_width="600dp"
             android:layout_height="200dp"
             android:textSize="120dp"
@@ -56,18 +68,18 @@
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="170dp"
-        android:layout_width="match_parent"
+        android:layout_marginTop="350dp"
+        android:layout_width="fill_parent"
         android:layout_height="150dp"
         android:id="@+id/linearLayout1"
-        android:layout_centerInParent="false"
-        android:gravity="fill_vertical">
+        android:gravity="center_horizontal"
+        android:layout_centerInParent="false">
         <TextView
             android:id="@+id/textview1"
-            android:layout_width="200dp"
+            android:textColor="@color/clockColour"
+            android:layout_width="fill_parent"
             android:layout_height="100dp"
             android:textSize="30dp"
-            android:layout_gravity="center_horizontal" />
+            android:gravity="center" />
     </LinearLayout>
 </RelativeLayout>

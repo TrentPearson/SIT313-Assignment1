@@ -2,11 +2,20 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/backgroundColour"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/bgImage"
+        android:layout_width="700dp"
+        android:layout_height="wrap_content"
+        android:src="@drawable/town2"
+        android:alpha="0.6"
+        android:layout_alignParentBottom="true" />
     <ImageButton
         android:src="@drawable/clock"
-        android:layout_width="135dp"
+        android:background="@color/btnBackground"
+        android:layout_width="137dp"
         android:layout_height="125dp"
         android:id="@+id/imgbutton1"
         android:layout_alignParentTop="false"
@@ -15,15 +24,17 @@
         android:foregroundGravity="left" />
     <ImageButton
         android:src="@drawable/list"
-        android:layout_width="135dp"
+        android:background="@color/btnBackground"
+        android:layout_width="137dp"
         android:layout_height="125dp"
         android:id="@+id/imgbutton2"
         android:layout_alignParentTop="false"
-        android:layout_marginLeft="138dp"
+        android:layout_marginLeft="137dp"
         android:foregroundGravity="top|center_vertical" />
     <ImageButton
         android:src="@drawable/add"
-        android:layout_width="135dp"
+        android:background="@color/btnBackground"
+        android:layout_width="137dp"
         android:layout_height="125dp"
         android:id="@+id/imgbutton3"
         android:layout_alignParentTop="false"
@@ -39,6 +50,7 @@
         <ListView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:textColor="@color/btnBackground"
             android:id="@+id/addlist" />
     </LinearLayout>
 </RelativeLayout>
